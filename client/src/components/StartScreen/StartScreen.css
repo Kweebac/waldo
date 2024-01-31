@@ -1,0 +1,33 @@
+.startScreen {
+  height: 100vh;
+
+  display: grid;
+  place-content: center;
+}
+
+.startScreen > .games {
+  width: 50vw;
+
+  display: grid;
+  grid-auto-flow: column;
+  gap: 2.5rem;
+}
+.startScreen > .games > .game {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+}
+.startScreen > .games > .game > button {
+  width: max-content;
+  padding: 0.5rem 2rem;
+
+  font-size: 1.25rem;
+  background-color: rgb(183, 183, 255);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.startScreen > .games > .game > img {
+  width: 100%;
+}

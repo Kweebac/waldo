@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-	"scripts": {
-		"test": "jest",
-		"dev": "nodemon server"
-	},
+  "scripts": {
+    "test": "jest --watch",
+    "dev": "nodemon server"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -16,9 +16,9 @@
     "mongoose": "^8.1.1"
   },
   "devDependencies": {
-    "@shelf/jest-mongodb": "^4.2.0",
     "dotenv": "^16.4.1",
     "jest": "^29.7.0",
+    "mongodb-memory-server": "^9.1.6",
     "supertest": "^6.3.4"
   }
 }
