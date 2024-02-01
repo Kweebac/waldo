@@ -1,7 +1,22 @@
+.game > img {
+  vertical-align: middle;
+}
 .game > .selectedArea {
   position: absolute;
   display: grid;
   grid-auto-flow: column;
+}
+.game > .selectedArea > .correct {
+  padding: 0.5rem;
+  background-color: lightgreen;
+  border-radius: 12px;
+  font-size: 1.1rem;
+}
+.game > .selectedArea > .incorrect {
+  padding: 0.5rem;
+  background-color: red;
+  border-radius: 12px;
+  font-size: 1.1rem;
 }
 .game > .selectedArea > .circle {
   width: 2.5rem;
@@ -16,4 +31,28 @@
 .game > .selectedArea > .characters > .character > button {
   cursor: pointer;
   font-size: 1.1rem;
+}
+
+.charactersPreview {
+  position: fixed;
+  background-color: white;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  display: grid;
+  grid-auto-flow: column;
+  gap: 0.5rem;
+}
+.charactersPreview > div {
+  display: grid;
+  justify-items: center;
+}
+.charactersPreview > div > .characterPreview {
+  height: 5rem;
+}
+
+@media screen and (max-width: 600px) {
+  .charactersPreview > div > .characterPreview {
+    height: 3rem;
+  }
 }
