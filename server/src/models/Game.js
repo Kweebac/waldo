@@ -13,5 +13,11 @@ module.exports = mongoose.model(
         },
       },
     ],
+    times: [
+      {
+        username: { type: String, required: true },
+        time: { type: Number, required: true },
+      },
+    ],
   })
 );

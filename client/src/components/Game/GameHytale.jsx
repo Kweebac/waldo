@@ -1,10 +1,9 @@
 import "./Game.css";
-import track from "../../assets/track/track.jpg";
-import odlaw from "../../assets/track/odlaw.png";
-import waldo from "../../assets/track/waldo.png";
-import wilma from "../../assets/track/wilma.png";
-import wizard from "../../assets/track/wizard.png";
-import woof from "../../assets/track/woof.png";
+import hytale from "../../assets/hytale/hytale.jpg";
+import terrain1 from "../../assets/hytale/terrain1.png";
+import terrain2 from "../../assets/hytale/terrain2.png";
+import terrain3 from "../../assets/hytale/terrain3.png";
+import terrain4 from "../../assets/hytale/terrain4.png";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { convertTimeToMessage } from "../../utils";
@@ -21,14 +20,13 @@ export default function GameTrack() {
 
   useEffect(() => {
     (async () => {
-      let res = await fetch("http://localhost:3000/api/track/characters");
+      let res = await fetch("http://localhost:3000/api/hytale/characters");
       res = await res.json();
       for (const character of res) {
-        if (character.name === "Odlaw") character.image = odlaw;
-        else if (character.name === "Waldo") character.image = waldo;
-        else if (character.name === "Wilma") character.image = wilma;
-        else if (character.name === "Wizard") character.image = wizard;
-        else if (character.name === "Woof") character.image = woof;
+        if (character.name === "Terrain 1") character.image = terrain1;
+        else if (character.name === "Terrain 2") character.image = terrain2;
+        else if (character.name === "Terrain 3") character.image = terrain3;
+        else if (character.name === "Terrain 4") character.image = terrain4;
       }
 
       setCharacters(res);
@@ -80,7 +78,7 @@ export default function GameTrack() {
   async function saveTime(e) {
     e.preventDefault();
 
-    await fetch("http://localhost:3000/api/track/time", {
+    await fetch("http://localhost:3000/api/hytale/time", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -91,7 +89,7 @@ export default function GameTrack() {
       }),
     });
 
-    const res = await fetch("http://localhost:3000/api/track/times");
+    const res = await fetch("http://localhost:3000/api/hytale/times");
     setTimes(await res.json());
   }
 
@@ -105,8 +103,8 @@ export default function GameTrack() {
   };
 
   const imgProps = {
-    src: track,
-    alt: "Where's Waldo on a running track",
+    src: hytale,
+    alt: "Hytale terrain",
     onClick: correct !== undefined ? undefined : (e) => selectArea(e),
   };
 

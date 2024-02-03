@@ -6,7 +6,7 @@
 }
 
 .startScreen > .games {
-  width: 50vw;
+  width: 65vw;
 
   display: grid;
   grid-auto-flow: column;
@@ -30,4 +30,14 @@
 }
 .startScreen > .games > .game > img {
   width: 100%;
+  height: 40vh;
+}
+
+@media screen and (max-width: 600px) {
+  .startScreen > .games {
+    grid-auto-flow: row;
+  }
+  .startScreen > .games > .game > img {
+    height: 20vh;
+  }
 }
