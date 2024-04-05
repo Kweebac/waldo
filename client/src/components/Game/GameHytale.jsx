@@ -20,7 +20,7 @@ export default function GameTrack() {
 
   useEffect(() => {
     (async () => {
-      let res = await fetch("http://localhost:3000/api/hytale/characters");
+      let res = await fetch("https://kweebac-waldo-api.up.railway.app/api/hytale/characters");
       res = await res.json();
       for (const character of res) {
         if (character.name === "Terrain 1") character.image = terrain1;
@@ -38,7 +38,7 @@ export default function GameTrack() {
       if (characters && !characters.length) {
         setCharacters(undefined);
 
-        let res = await fetch("http://localhost:3000/api/timeTaken");
+        let res = await fetch("https://kweebac-waldo-api.up.railway.app/api/timeTaken");
         setTimeTakenMs(await res.json());
       }
     })();
@@ -78,7 +78,7 @@ export default function GameTrack() {
   async function saveTime(e) {
     e.preventDefault();
 
-    await fetch("http://localhost:3000/api/hytale/time", {
+    await fetch("https://kweebac-waldo-api.up.railway.app/api/hytale/time", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -89,7 +89,7 @@ export default function GameTrack() {
       }),
     });
 
-    const res = await fetch("http://localhost:3000/api/hytale/times");
+    const res = await fetch("https://kweebac-waldo-api.up.railway.app/api/hytale/times");
     setTimes(await res.json());
   }
 

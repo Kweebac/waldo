@@ -21,6 +21,8 @@ async function getTimes(req, res) {
   const { gameId } = req.params;
 
   const track = await Game.findOne({ name: gameId }, "times").exec();
+  if (track === null) res.json(undefined);
+
   const limitedTimes = [];
   for (let i = 0; i < track.times.length && i < 10; i++) {
     limitedTimes.push(track.times[i]);

@@ -6,8 +6,6 @@
 }
 
 .startScreen > .games {
-  width: 65vw;
-
   display: grid;
   grid-auto-flow: column;
   gap: 2.5rem;
@@ -29,11 +27,25 @@
   cursor: pointer;
 }
 .startScreen > .games > .game > img {
-  width: 100%;
-  height: 40vh;
+  width: 28rem;
+  height: 20rem;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 950px) {
+  .startScreen > .games > .game > img {
+    width: 22rem;
+    height: 15rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .startScreen > .games > .game > img {
+    width: 18rem;
+    height: 12rem;
+  }
+}
+
+@media screen and (max-width: 620px) {
   .startScreen > .games {
     grid-auto-flow: row;
   }

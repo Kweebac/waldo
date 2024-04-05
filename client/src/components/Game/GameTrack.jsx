@@ -21,7 +21,7 @@ export default function GameTrack() {
 
   useEffect(() => {
     (async () => {
-      let res = await fetch("http://localhost:3000/api/track/characters");
+      let res = await fetch("https://kweebac-waldo-api.up.railway.app/api/track/characters");
       res = await res.json();
       for (const character of res) {
         if (character.name === "Odlaw") character.image = odlaw;
@@ -40,7 +40,7 @@ export default function GameTrack() {
       if (characters && !characters.length) {
         setCharacters(undefined);
 
-        let res = await fetch("http://localhost:3000/api/timeTaken");
+        let res = await fetch("https://kweebac-waldo-api.up.railway.app/api/timeTaken");
         setTimeTakenMs(await res.json());
       }
     })();
@@ -80,7 +80,7 @@ export default function GameTrack() {
   async function saveTime(e) {
     e.preventDefault();
 
-    await fetch("http://localhost:3000/api/track/time", {
+    await fetch("https://kweebac-waldo-api.up.railway.app/api/track/time", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -91,7 +91,7 @@ export default function GameTrack() {
       }),
     });
 
-    const res = await fetch("http://localhost:3000/api/track/times");
+    const res = await fetch("https://kweebac-waldo-api.up.railway.app/api/track/times");
     setTimes(await res.json());
   }
 

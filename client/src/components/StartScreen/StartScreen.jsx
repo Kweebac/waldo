@@ -12,11 +12,11 @@ export default function StartScreen() {
 
   useEffect(() => {
     (async () => {
-      let res = await fetch("http://localhost:3000/api/track/times");
+      let res = await fetch("https://kweebac-waldo-api.up.railway.app/api/track/times");
       res = await res.json();
       setTrackWR(res[0]);
 
-      res = await fetch("http://localhost:3000/api/hytale/times");
+      res = await fetch("https://kweebac-waldo-api.up.railway.app/api/hytale/times");
       res = await res.json();
       setHytaleWR(res[0]);
     })();
