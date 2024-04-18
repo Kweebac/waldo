@@ -9,9 +9,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(
   cors({
+    credentials: true,
     origin: true,
   })
 );
 app.use("/api", indexRouter);
 
 app.listen(process.env.PORT || 3000, "0.0.0.0");
+
